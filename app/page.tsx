@@ -337,89 +337,12 @@ export default function TextToSpeech() {
             <div className="flex justify-between items-center">
               <div>
                 <CardTitle className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                  ElevenLabs Text-to-Speech
+                  Vocal Vista
                 </CardTitle>
                 <CardDescription className="text-gray-400">
                   Convert your text to natural-sounding speech
                 </CardDescription>
               </div>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button variant="ghost" size="icon" className="text-gray-400 hover:text-gray-200">
-                          <Settings className="h-5 w-5" />
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="bg-gray-900 border-gray-800">
-                        <DialogHeader>
-                          <DialogTitle className="text-gray-200">Advanced Settings</DialogTitle>
-                          <DialogDescription className="text-gray-400">
-                            Fine-tune your voice generation parameters
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div className="space-y-4 py-4">
-                          <div className="space-y-2">
-                            <Label htmlFor="model" className="text-gray-300">
-                              Model
-                            </Label>
-                            <Select value={selectedModel} onValueChange={setSelectedModel}>
-                              <SelectTrigger className="bg-gray-800/50 border-gray-700 text-gray-200">
-                                <SelectValue placeholder="Select a model" />
-                              </SelectTrigger>
-                              <SelectContent className="bg-gray-800 border-gray-700 text-gray-200">
-                                {models.map((model) => (
-                                  <SelectItem key={model.model_id} value={model.model_id}>
-                                    {model.name}
-                                  </SelectItem>
-                                ))}
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="stability" className="text-gray-300">
-                              Stability: {stability}
-                            </Label>
-                            <Slider
-                              id="stability"
-                              value={[stability * 100]}
-                              min={0}
-                              max={100}
-                              step={1}
-                              onValueChange={(value) => setStability(value[0] / 100)}
-                              className="py-2"
-                            />
-                            <p className="text-xs text-gray-400">
-                              Higher values make the voice more consistent but may sound less natural.
-                            </p>
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="similarity" className="text-gray-300">
-                              Similarity Boost: {similarityBoost}
-                            </Label>
-                            <Slider
-                              id="similarity"
-                              value={[similarityBoost * 100]}
-                              min={0}
-                              max={100}
-                              step={1}
-                              onValueChange={(value) => setSimilarityBoost(value[0] / 100)}
-                              className="py-2"
-                            />
-                            <p className="text-xs text-gray-400">
-                              Higher values make the voice more similar to the original voice.
-                            </p>
-                          </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Advanced Settings</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
             </div>
           </CardHeader>
 
@@ -556,14 +479,6 @@ export default function TextToSpeech() {
         {/* Hidden audio element */}
         <audio ref={audioRef} src={audioUrl} />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          className="mt-4 text-center text-gray-500 text-xs"
-        >
-          Powered by ElevenLabs API | Created with Next.js and Tailwind CSS
-        </motion.div>
       </motion.div>
       <Toaster />
     </div>
