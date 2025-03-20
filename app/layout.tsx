@@ -5,9 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "ElevenLabs Text-to-Speech",
-  description: "A modern text-to-speech application powered by ElevenLabs",
-    generator: 'v0.dev'
+  title: "VoxGen - AI Text to Speech",
+  description: "Transform text into natural speech with AI-powered voices",
 }
 
 export default function RootLayout({ children }) {
@@ -22,6 +21,3 @@ export default function RootLayout({ children }) {
   )
 }
 
-
-
-import './globals.css'
