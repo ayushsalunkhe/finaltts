@@ -46,7 +46,7 @@ export default function TextToSpeech() {
   const [stability, setStability] = useState(0.5)
   const [similarityBoost, setSimilarityBoost] = useState(0.5)
   const audioRef = useRef<HTMLAudioElement>(null)
-  const maxCharacters = 500
+  const maxCharacters = 1000
 
   // Languages supported by ElevenLabs
   const languages: Language[] = [
