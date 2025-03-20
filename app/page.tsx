@@ -181,7 +181,7 @@ export default function TextToSpeech() {
           model_id: selectedModel,
           voice_settings: {
             stability,
-            similarity_boost,
+            similarityBoost,
           },
         }),
       })
