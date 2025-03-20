@@ -74,6 +74,14 @@
   background: rgba(107, 114, 128, 0.5);
 }
 
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Glassmorphism effects */
 .glassmorphism {
   background: rgba(17, 24, 39, 0.7);
@@ -84,10 +92,27 @@
 
 /* Neon glow effects */
 .neon-glow {
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .neon-text {
-  text-shadow: 0 0 5px rgba(59, 130, 246, 0.7);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
 }
 
